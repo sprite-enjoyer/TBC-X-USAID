@@ -1,5 +1,34 @@
+// general
+
+$link-blue: #182cc0;
+
+// header specific
+
+$header-text-color: rgb(85, 95, 98);
+$header-buttonGroup-text-color: rgb(34, 34, 34);
 $header-background-color: rgb(255, 255, 255);
 $header-border-bottom-color: rgb(238, 241, 241);
-$header-text-color: rgb(85, 95, 98);
+
+// breadcrumbs
 
 $breadcurmbs-text-color: rgb(20, 23, 25);
+
+// font-faces
+
+@font-face {
+  font-family: "TBCX";
+  src: url("./src/fonts/TBCXRegular.dee156cc.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TBCX";
+  src: url("./src/fonts/TBCXMedium.8ef1248a.woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "TBCX";
+  src: url("./src/fonts/TBCXBold.6db5e61d.woff2");
+  font-weight: 800;
+}

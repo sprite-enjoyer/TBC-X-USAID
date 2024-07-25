@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+.active {
+  display: block;
+}
+
 #root {
   position: absolute;
   width: 100vw;
@@ -16,32 +20,70 @@ body {
 
 .header {
   width: 100%;
-  border: 2px solid red;
   color: $header-text-color;
   background-color: $header-background-color;
-  padding: 20px 47px;
-  height: 80px;
+  padding: 0px 47px;
+  height: 79px;
   box-sizing: border-box;
+  border-bottom: 1px solid $header-border-bottom-color;
+  display: flex;
+  align-items: center;
+  font-family: "TBCX", sans-serif;
 
   &__content {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
+    column-gap: 32px;
 
     &__logo {
+      height: 32px;
     }
 
     &__button-group1 {
+      display: flex;
+      column-gap: 32px;
+      font-size: 14px;
+
       &__button {
+        all: unset;
+        color: $header-buttonGroup-text-color;
       }
     }
     &__button-group2 {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      color: $header-text-color;
+      column-gap: 16px;
+
       &__search-button {
+        color: $header-text-color;
+
+        &:visited {
+        }
       }
+
       &__kits-link {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        color: $link-blue;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &:visited {
+        }
       }
       &__language-switch {
+        all: unset;
+        font-weight: 800;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
       }
     }
   }
