@@ -3,6 +3,7 @@
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 
 .active {
@@ -29,6 +30,10 @@ body {
   display: flex;
   align-items: center;
   font-family: "TBCX", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 
   &__content {
     width: 100%;
@@ -49,6 +54,7 @@ body {
       &__button {
         all: unset;
         color: $header-buttonGroup-text-color;
+        cursor: pointer;
       }
     }
     &__button-group2 {
@@ -87,6 +93,12 @@ body {
       }
     }
   }
+}
+
+.smooth-scroll-container {
+  overflow: hidden;
+  margin-top: 80px;
+  transition: transform 0.5s ease-out;
 }
 
 .breadcrumbs {
