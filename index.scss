@@ -23,12 +23,14 @@ body {
   width: 100%;
   color: $header-text-color;
   background-color: $header-background-color;
-  padding: 0px 47px;
+  padding: 0px $global-horizontal-padding;
   height: 79px;
   box-sizing: border-box;
   border-bottom: 1px solid $header-border-bottom-color;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-family: "TBCX", sans-serif;
   position: fixed;
   top: 0;
@@ -41,6 +43,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     column-gap: 32px;
+    height: 100%;
 
     &__logo {
       height: 32px;
@@ -50,13 +53,78 @@ body {
       display: flex;
       column-gap: 32px;
       font-size: 14px;
+      height: 100%;
 
-      &__button {
-        all: unset;
-        color: $header-buttonGroup-text-color;
-        cursor: pointer;
+      &__btn-wrapper {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        &__button {
+          all: unset;
+          color: $header-buttonGroup-text-color;
+          cursor: pointer;
+          height: 100%;
+          z-index: 999;
+        }
+
+        &__line {
+          width: 0;
+          height: 2px;
+          background-color: $border-bottom-blue;
+          transition: width 0.4s ease-out;
+          z-index: 9999;
+        }
+
+        &__line-active {
+          width: 100%;
+        }
+
+        &__nav {
+          position: absolute;
+          top: 80px;
+          left: 0px;
+          display: none;
+          flex-direction: column;
+          width: 200px;
+          transition-delay: 0s;
+          opacity: 0;
+          pointer-events: none;
+          gap: 5px;
+          display: flex;
+          align-items: start;
+          transition: opacity 0.6s ease;
+          gap: 16px;
+          padding: 32px 0;
+
+          &__link {
+            color: $dark-text-color1;
+            text-decoration: none;
+            line-height: 27px;
+            text-rendering: optimizelegibility;
+            text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            text-decoration-style: solid;
+            text-decoration-thickness: auto;
+            font-family: "TBCX", sans-serif;
+            font-size: 16px;
+          }
+
+          &__link:visited {
+          }
+        }
+
+        &__nav-shown {
+          transition-delay: 0.6s;
+          opacity: 1;
+          pointer-events: all;
+        }
       }
     }
+
     &__button-group2 {
       display: flex;
       align-items: center;
@@ -93,18 +161,50 @@ body {
       }
     }
   }
+
+  &__dropdown {
+    box-sizing: border-box;
+    background-color: $header-background-color;
+    position: absolute;
+    top: 79px;
+    min-height: 205px;
+    transition: height 0.6s ease-in-out;
+    width: 100%;
+    display: none;
+    padding: 0 $global-horizontal-padding;
+    color: $dark-text-color1;
+    font-size: 16px;
+
+    &__link {
+      color: $link-blue;
+      text-decoration: none;
+      font-weight: 700;
+      -webkit-font-smoothing: antialiased;
+      // text-shadow: 0 0 2px $link-blue;
+      font-size: 14px;
+
+      &:visited {
+      }
+    }
+  }
+
+  &__dropdown-shown {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .smooth-scroll-container {
   overflow: hidden;
   margin-top: 80px;
   transition: transform 0.5s ease-out;
+  padding: 0px $global-horizontal-padding;
 }
 
 .breadcrumbs {
   &__content {
     &__text {
-      color: $breadcurmbs-text-color;
+      color: $dark-text-color1;
     }
   }
 }
