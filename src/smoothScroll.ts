@@ -16,13 +16,14 @@ const scrollSmoothly = (scrollingUp: boolean, scrollActionDist: number) => {
 
   if (scrollingUp) {
     if (rect.bottom >= rect.height) {
+      scrollTo({ top: 0 });
       setTranslateY(0);
       return;
     }
     setTranslateY(currentScrollDistance + scrollActionDist);
   } else {
-    if (-currentScrollDistance >= rect.height - window.innerHeight) {
-      setTranslateY(-(rect.height - window.innerHeight));
+    if (-currentScrollDistance >= rect.height - window.innerHeight + 80) {
+      setTranslateY(-(rect.height - window.innerHeight + 80));
       return;
     }
     setTranslateY(currentScrollDistance - scrollActionDist);
